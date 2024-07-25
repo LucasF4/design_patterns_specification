@@ -1,0 +1,10 @@
+{
+  "name": "billingCob",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  }
+}
