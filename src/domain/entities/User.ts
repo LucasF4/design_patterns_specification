@@ -1,5 +1,7 @@
 import UserAgeSpecification from "./specification/UserAgeSpecification"
+import { UserEmailSpecification } from "./specification/UserEmailSpecification"
 import UserNameSpecification from "./specification/UserNameSpecification"
+import { UserPasswordSpecification } from "./specification/UserPasswordSpecification"
 
 export class User {
     constructor(
@@ -11,7 +13,11 @@ export class User {
 
         const userSpecification = new UserNameSpecification()
         const ageSpecification = new UserAgeSpecification()
-        console.log(userSpecification.and(ageSpecification).isSatisfiedBy(this))
+        const emailSpecification = new UserEmailSpecification()
+        const passwordSpecification = new UserPasswordSpecification()
+        if(!userSpecification.and(ageSpecification).and(emailSpecification).and(passwordSpecification).isSatisfiedBy(this)){
+            throw new Error("Invalid parameter")
+        }
 
     }
 }
